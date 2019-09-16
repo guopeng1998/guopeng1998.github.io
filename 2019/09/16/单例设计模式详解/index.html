@@ -8,19 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>单例设计模式详解 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="图片">
+  <meta name="description" content="设计模式详解概述： 单例模式（Singleton），也叫单子模式，是一种常用的设计模式。在应用这个模式时，单例对象的类必须保证只有一个实例存在。单例模式就是为确保一个类只有一个实例，并为整个系统提供一个全局访问点的一种方法。 一、饿汉模式 类加载的方式是按需加载，且只加载一次，因此该单例类只会创建一个实例，也就是说，线程每次都只能也必定只可以拿到这个唯一的对象。因此就说，饿汉式单例天生就是线程安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例设计模式详解">
 <meta property="og:url" content="http://yoursite.com/2019/09/16/单例设计模式详解/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="图片">
+<meta property="og:description" content="设计模式详解概述： 单例模式（Singleton），也叫单子模式，是一种常用的设计模式。在应用这个模式时，单例对象的类必须保证只有一个实例存在。单例模式就是为确保一个类只有一个实例，并为整个系统提供一个全局访问点的一种方法。 一、饿汉模式 类加载的方式是按需加载，且只加载一次，因此该单例类只会创建一个实例，也就是说，线程每次都只能也必定只可以拿到这个唯一的对象。因此就说，饿汉式单例天生就是线程安全">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/images/car.jpg">
-<meta property="og:updated_time" content="2019-09-16T14:22:19.586Z">
+<meta property="og:image" content="http://yoursite.com/images/%E9%A5%BF%E6%B1%89%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="http://yoursite.com/images/%E6%87%92%E6%B1%89%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:updated_time" content="2019-09-16T14:51:23.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单例设计模式详解">
-<meta name="twitter:description" content="图片">
-<meta name="twitter:image" content="http://yoursite.com/images/car.jpg">
+<meta name="twitter:description" content="设计模式详解概述： 单例模式（Singleton），也叫单子模式，是一种常用的设计模式。在应用这个模式时，单例对象的类必须保证只有一个实例存在。单例模式就是为确保一个类只有一个实例，并为整个系统提供一个全局访问点的一种方法。 一、饿汉模式 类加载的方式是按需加载，且只加载一次，因此该单例类只会创建一个实例，也就是说，线程每次都只能也必定只可以拿到这个唯一的对象。因此就说，饿汉式单例天生就是线程安全">
+<meta name="twitter:image" content="http://yoursite.com/images/%E9%A5%BF%E6%B1%89%E6%A8%A1%E5%BC%8F.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -185,7 +186,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img src="/images/car.jpg" alt="汽车"></p>
+        <h1 id="设计模式详解"><a href="#设计模式详解" class="headerlink" title="设计模式详解"></a>设计模式详解</h1><p>概述：</p>
+<p>单例模式（Singleton），也叫单子模式，是一种常用的设计模式。在应用这个模式时，单例对象的类必须保证只有一个实例存在。单例模式就是为确保一个类只有一个实例，并为整个系统提供一个全局访问点的一种方法。</p>
+<h2 id="一、饿汉模式"><a href="#一、饿汉模式" class="headerlink" title="一、饿汉模式"></a>一、饿汉模式</h2><p><img src="/images/%E9%A5%BF%E6%B1%89%E6%A8%A1%E5%BC%8F.png" alt></p>
+<p>类加载的方式是按需加载，且只加载一次，因此该单例类只会创建一个实例，也就是说，线程每次都只能也必定只可以拿到这个唯一的对象。因此就说，饿汉式单例天生就是线程安全的。</p>
+<h2 id="二、懒汉模式"><a href="#二、懒汉模式" class="headerlink" title="二、懒汉模式"></a>二、懒汉模式</h2><p><img src="/images/%E6%87%92%E6%B1%89%E6%A8%A1%E5%BC%8F.png" alt></p>
+<p>Java的懒汉模式（线程不安全）版就是在类加载时候声明一个类对象，然后在静态方法getInstance()中判断一次是否为空，如果为空就new出它的实例，不为空直接返回这个对象</p>
+<h2 id="三、小结"><a href="#三、小结" class="headerlink" title="三、小结"></a>三、小结</h2><p>传统的饿汉式单例无论在单线程还是多线程环境下都是线程安全的，但是传统的懒汉式单例在多线程环境下是非线程安全的。</p>
 
       
 
@@ -318,7 +325,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图片"><span class="toc-number">1.</span> <span class="toc-text">图片</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#设计模式详解"><span class="toc-number">1.</span> <span class="toc-text">设计模式详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、饿汉模式"><span class="toc-number">1.1.</span> <span class="toc-text">一、饿汉模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、懒汉模式"><span class="toc-number">1.2.</span> <span class="toc-text">二、懒汉模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、小结"><span class="toc-number">1.3.</span> <span class="toc-text">三、小结</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

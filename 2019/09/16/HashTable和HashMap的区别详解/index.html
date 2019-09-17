@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>HashTable和HashMap的区别详解 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HashMap和HashTable的区别详解">
+  <meta name="description" content="HashMap和HashTable的区别详解一、HashMap的简介HashMap的特点：1.HashMap是基于哈希表实现的，每一个元素都是一个key-value的键值对，其内部通过单链表解决冲突问题，容量不足（超过阀值）时，同样也会增长。 2.HashMap是非线程安全的，只是适用于单线程环境下，多线程环境下可以用concurrent并发包下的coucurrentHashMap。 3.Hash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HashTable和HashMap的区别详解">
 <meta property="og:url" content="http://yoursite.com/2019/09/16/HashTable和HashMap的区别详解/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="HashMap和HashTable的区别详解">
+<meta property="og:description" content="HashMap和HashTable的区别详解一、HashMap的简介HashMap的特点：1.HashMap是基于哈希表实现的，每一个元素都是一个key-value的键值对，其内部通过单链表解决冲突问题，容量不足（超过阀值）时，同样也会增长。 2.HashMap是非线程安全的，只是适用于单线程环境下，多线程环境下可以用concurrent并发包下的coucurrentHashMap。 3.Hash">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-16T13:48:12.914Z">
+<meta property="og:updated_time" content="2019-09-17T09:19:37.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HashTable和HashMap的区别详解">
-<meta name="twitter:description" content="HashMap和HashTable的区别详解">
+<meta name="twitter:description" content="HashMap和HashTable的区别详解一、HashMap的简介HashMap的特点：1.HashMap是基于哈希表实现的，每一个元素都是一个key-value的键值对，其内部通过单链表解决冲突问题，容量不足（超过阀值）时，同样也会增长。 2.HashMap是非线程安全的，只是适用于单线程环境下，多线程环境下可以用concurrent并发包下的coucurrentHashMap。 3.Hash">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -185,8 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="HashMap和HashTable的区别详解"><a href="#HashMap和HashTable的区别详解" class="headerlink" title="HashMap和HashTable的区别详解"></a>HashMap和HashTable的区别详解</h1><a id="more"></a>
-<h2 id="一、HashMap的简介"><a href="#一、HashMap的简介" class="headerlink" title="一、HashMap的简介"></a>一、HashMap的简介</h2><h3 id="HashMap的特点："><a href="#HashMap的特点：" class="headerlink" title="HashMap的特点："></a>HashMap的特点：</h3><p>1.HashMap是基于哈希表实现的，每一个元素都是一个key-value的键值对，其内部通过单链表解决冲突问题，容量不足（超过阀值）时，同样也会增长。</p>
+        <h1 id="HashMap和HashTable的区别详解"><a href="#HashMap和HashTable的区别详解" class="headerlink" title="HashMap和HashTable的区别详解"></a>HashMap和HashTable的区别详解</h1><h2 id="一、HashMap的简介"><a href="#一、HashMap的简介" class="headerlink" title="一、HashMap的简介"></a>一、HashMap的简介</h2><h3 id="HashMap的特点："><a href="#HashMap的特点：" class="headerlink" title="HashMap的特点："></a>HashMap的特点：</h3><p>1.HashMap是基于哈希表实现的，每一个元素都是一个key-value的键值对，其内部通过单链表解决冲突问题，容量不足（超过阀值）时，同样也会增长。</p>
 <p>2.HashMap是非线程安全的，只是适用于单线程环境下，多线程环境下可以用concurrent并发包下的coucurrentHashMap。</p>
 <p>3.HashMap实现了Serializable接口，因此它支持序列化，实现了Cloneable接口，能被克隆。</p>
 <p>HashMap的存储过程：</p>

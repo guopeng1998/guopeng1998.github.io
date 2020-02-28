@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="数据库的基本概念">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-28T08:29:25.026Z">
+<meta property="og:updated_time" content="2020-02-28T10:22:42.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL知识点总结(一)">
 <meta name="twitter:description" content="数据库的基本概念">
@@ -235,7 +235,33 @@
 3.DQL(Data Query Language)数据查询语言
     用来查询数据库中表的记录（数据）。关键字：select，where等
 4.DCL(Data Control Language)数据控制语言
-    用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANE,REVOKE等</code></pre>
+    用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANE,REVOKE等</code></pre><h3 id="DDL操作数据库"><a href="#DDL操作数据库" class="headerlink" title="DDL操作数据库"></a>DDL操作数据库</h3><pre><code>1.C(create)：创建
+    *创建数据库：
+        *create database 数据库名称；
+    *创建数据库，判断不存在，再创建；
+        *create database if not exists 数据库名称
+    *创建数据库，并指定字符集
+        *create database 数据库名称 character set 字符集名；
+    *案例：创建db4数据库，判断是否存在，并指定字符集为gbk
+        *create database if not db4 character set gbk;
+2.R(Retrieve)：查询
+    *查询所有数据库名称：
+        *show databases;
+    *查询某个数据库的字符集：查询某个数据库的创建语句
+        *show create database 数据库名称；
+3.U(Update)：修改
+    *修改数据库的字符集
+        *alter database 数据库名称 character set 字符集名；
+4.D(Delete)：删除
+    *删除数据库
+        *drop database 数据库名；
+    *判断数据库是否存在，存在再删除
+        *drop database if exists 数据库名称；
+5.使用数据库
+    *查询当前正在使用的数据库名称；
+        *select database();
+    *使用数据库
+        *use 数据库名称；</code></pre>
       
 
       
@@ -367,7 +393,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库的基本概念"><span class="toc-number">1.</span> <span class="toc-text">数据库的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL的目录结构"><span class="toc-number">2.</span> <span class="toc-text">MySQL的目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL的安装和配置"><span class="toc-number">3.</span> <span class="toc-text">MySQL的安装和配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的定义"><span class="toc-number">4.</span> <span class="toc-text">SQL的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的通用语法"><span class="toc-number">5.</span> <span class="toc-text">SQL的通用语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的分类"><span class="toc-number">6.</span> <span class="toc-text">SQL的分类</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库的基本概念"><span class="toc-number">1.</span> <span class="toc-text">数据库的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL的目录结构"><span class="toc-number">2.</span> <span class="toc-text">MySQL的目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL的安装和配置"><span class="toc-number">3.</span> <span class="toc-text">MySQL的安装和配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的定义"><span class="toc-number">4.</span> <span class="toc-text">SQL的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的通用语法"><span class="toc-number">5.</span> <span class="toc-text">SQL的通用语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的分类"><span class="toc-number">6.</span> <span class="toc-text">SQL的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DDL操作数据库"><span class="toc-number">7.</span> <span class="toc-text">DDL操作数据库</span></a></li></ol>
                     </div>
                 </span>
             </div>

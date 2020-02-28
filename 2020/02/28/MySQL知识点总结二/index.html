@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>MySQL知识点总结二 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="DQL操作表的排序查询1.排序查询     *语法：order by 子句         *order by 排序字段1 排序方式1, 排序字段2 排序方式2...     *排序方式         *ASC：升序，默认的         *DESC：降序     *注意：         *如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件DQL操作表的聚合函数聚合函数：将一列数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL知识点总结二">
+<meta property="og:url" content="http://yoursite.com/2020/02/28/MySQL知识点总结二/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="DQL操作表的排序查询1.排序查询     *语法：order by 子句         *order by 排序字段1 排序方式1, 排序字段2 排序方式2...     *排序方式         *ASC：升序，默认的         *DESC：降序     *注意：         *如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件DQL操作表的聚合函数聚合函数：将一列数据">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-28T14:09:22.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="个人技术博客">
+<meta name="twitter:title" content="MySQL知识点总结二">
+<meta name="twitter:description" content="DQL操作表的排序查询1.排序查询     *语法：order by 子句         *order by 排序字段1 排序方式1, 排序字段2 排序方式2...     *排序方式         *ASC：升序，默认的         *DESC：降序     *注意：         *如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件DQL操作表的聚合函数聚合函数：将一列数据">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -162,77 +163,308 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-MySQL知识点总结二" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      MySQL知识点总结二
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+
+        
+        
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
 <a href="/2020/02/28/MySQL知识点总结二/" class="archive-article-date">
   	<time datetime="2020-02-28T12:58:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/28/MySQL知识点总结二/">MySQL知识点总结二</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="DQL操作表的排序查询"><a href="#DQL操作表的排序查询" class="headerlink" title="DQL操作表的排序查询"></a>DQL操作表的排序查询</h3><pre><code>1.排序查询
+    *语法：order by 子句
+        *order by 排序字段1 排序方式1, 排序字段2 排序方式2...
+    *排序方式
+        *ASC：升序，默认的
+        *DESC：降序
+    *注意：
+        *如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件</code></pre><h3 id="DQL操作表的聚合函数"><a href="#DQL操作表的聚合函数" class="headerlink" title="DQL操作表的聚合函数"></a>DQL操作表的聚合函数</h3><pre><code>聚合函数：将一列数据作为一个整体，进行纵向的计算。
+    1.count：计算个数
+        1.一般选择非空的列：主键
+        2.count(*)
+    2.max:计算最大值
+    3.min:计算最小值
+    4.sum:计算和
+    5.avg:计算平均值
+    *注意：聚合函数的计算要排除null值
+        解决方案：
+            1.选择不包含空值的列进行计算
+            2.IFNULL函数</code></pre><h3 id="DQL操作表的分组查询"><a href="#DQL操作表的分组查询" class="headerlink" title="DQL操作表的分组查询"></a>DQL操作表的分组查询</h3><pre><code>1.语法：group by 分组字段
+2.注意：
+    1.分组之后查询的字段：分组字段、聚合函数
+    2.where和having的区别？
+        1.where在分组之前进行限定，如果不满足条件，则不参与分组。having在分组之后进行限定，如果不满足条件，则不会被查询出来。
+        2.where后面不可跟聚合函数，having可以进行聚合函数的判断。</code></pre><h3 id="DQL操作表的分页查询"><a href="#DQL操作表的分页查询" class="headerlink" title="DQL操作表的分页查询"></a>DQL操作表的分页查询</h3><pre><code>分页查询
+    1.语法：limit 开始的索引,每页查询的条数
+    2.公式：开始的索引 = (当前的页码-1) * 每页显示的条数
+    3.limit是MySQL的一个“方言”</code></pre><h3 id="约束的概念和分类"><a href="#约束的概念和分类" class="headerlink" title="约束的概念和分类"></a>约束的概念和分类</h3><pre><code>*概念：对表中的数据进行限定，保证数据的正确性、有效性和完整性。
+*分类：
+    1.主键约束：primary key
+    2.非空约束：not null
+    3.唯一约束：unique
+    4.外键约束：foreign key</code></pre><h3 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h3><pre><code>1.创建表时添加约束
+    create table stu(
+        id int,
+        name varchar(20) not null   --name为非空
+    );
+2.创建完表后，添加非空约束
+    alter table stu modify name varchar(20) not null;
+3.删除name的非空约束
+    alter table stu modify name varchar(20);</code></pre><h3 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h3><pre><code>唯一约束：unique，某一列的值不能重复
+    1.注意：
+        *唯一约束可以有null值，但是只能有一条记录null
+    2.在创建表时，条件唯一约束
+        create table stu(
+            id int,
+            phone_number varchar(20) unique --手机号
+        );
+    3.删除唯一约束
+        alter table stu drop index phone_number;
+    4.在表创建完后，添加唯一约束
+        alter table stu modify phone_number;</code></pre><h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><pre><code>主键约束：primary key
+    1.注意：
+        1.含义：非空且唯一
+        2.一张表只能有一个字段为主键
+        3.主键就是表中记录的唯一标识
+    2.在创建表时，添加主键约束
+        create table stu(
+            id int primary key,
+            name varchar(20)
+        );
+    3.删除主键
+        --错误 alter table stu modify id int;
+        alter table stu drop primary key;
+    4.创建完表后，再添加主键
+        alter table stu modify id int primary key;</code></pre><h3 id="主键的自动增长"><a href="#主键的自动增长" class="headerlink" title="主键的自动增长"></a>主键的自动增长</h3><pre><code>1.概念：如果某一列是数值类型的，使用 auto_increment 可以来完成值的自动增长
+2.在创建表时，添加主键约束，并且完成主键自动增长
+    create table stu(
+        id int primary key auto_increment,  --给id添加主键约束
+        name varchar(20)
+    );
+3.删除自动增长
+    alter table stu modify id int;
+4.添加自动增长
+    alter table stu modify id int auto_increment;</code></pre><h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><pre><code>*外键约束：foreign key，让表与表产生关系，从而保证数据的正确性
+    1.在创建表时，可以添加外键
+        *语法：
+            create table 表名(
+                ...
+                外键列
+                constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称) 
+            );
+    2.删除外键
+        alter table 表名 drop foreign key 外键名称；
+    3.创建表之后，添加外键
+        alter table 表名 add constraint 外键名称 foreign key (外键字段名称) references 主表名称(主表列名称);</code></pre><h3 id="级联操作"><a href="#级联操作" class="headerlink" title="级联操作"></a>级联操作</h3><pre><code>1.添加级联操作
+    语法：alter table 表名 add constraint 外键名称 foreign key (外键字段名称) references 主表名称(主表列名称);
+2.分类：
+    1.级联更新：on update cascade
+    2.级联删除：on delete cascade</code></pre><h3 id="多表之间的关系以及实现关系"><a href="#多表之间的关系以及实现关系" class="headerlink" title="多表之间的关系以及实现关系"></a>多表之间的关系以及实现关系</h3><pre><code>1.多表之间的关系
+    1.分类：
+        1.一对一
+        2.一对多
+        3.多对多
+2.实现关系
+    1.一对多(多对一)
+    2.多对多
+    3.一对一</code></pre><h3 id="数据库设计范式的概念"><a href="#数据库设计范式的概念" class="headerlink" title="数据库设计范式的概念"></a>数据库设计范式的概念</h3><pre><code>*概念</code></pre><h3 id="数据库范式的分类"><a href="#数据库范式的分类" class="headerlink" title="数据库范式的分类"></a>数据库范式的分类</h3><pre><code>*分类：
+    1.第一范式(1NF)：
+    2.第二范式(2NF)：
+    3.第三范式(3NF)：</code></pre><h3 id="数据库的备份和还原"><a href="#数据库的备份和还原" class="headerlink" title="数据库的备份和还原"></a>数据库的备份和还原</h3><pre><code>1.命令行：
+2.图形化工具：</code></pre>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝肥宅快乐水<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifupay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixinpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://guopeng1998.github.io/2020/02/28/MySQL知识点总结二/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/27/MySQL知识点总结-一/" class="archive-article-date">
-  	<time datetime="2020-02-27T13:24:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/27/MySQL知识点总结-一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL知识点总结(一)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/27/MySQL知识点总结-一/">MySQL知识点总结(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#DQL操作表的排序查询"><span class="toc-number">1.</span> <span class="toc-text">DQL操作表的排序查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DQL操作表的聚合函数"><span class="toc-number">2.</span> <span class="toc-text">DQL操作表的聚合函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DQL操作表的分组查询"><span class="toc-number">3.</span> <span class="toc-text">DQL操作表的分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DQL操作表的分页查询"><span class="toc-number">4.</span> <span class="toc-text">DQL操作表的分页查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#约束的概念和分类"><span class="toc-number">5.</span> <span class="toc-text">约束的概念和分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非空约束"><span class="toc-number">6.</span> <span class="toc-text">非空约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#唯一约束"><span class="toc-number">7.</span> <span class="toc-text">唯一约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主键约束"><span class="toc-number">8.</span> <span class="toc-text">主键约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主键的自动增长"><span class="toc-number">9.</span> <span class="toc-text">主键的自动增长</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外键约束"><span class="toc-number">10.</span> <span class="toc-text">外键约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#级联操作"><span class="toc-number">11.</span> <span class="toc-text">级联操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多表之间的关系以及实现关系"><span class="toc-number">12.</span> <span class="toc-text">多表之间的关系以及实现关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库设计范式的概念"><span class="toc-number">13.</span> <span class="toc-text">数据库设计范式的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库范式的分类"><span class="toc-number">14.</span> <span class="toc-text">数据库范式的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库的备份和还原"><span class="toc-number">15.</span> <span class="toc-text">数据库的备份和还原</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
+  
+
+  
+
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+  var gitalk = new Gitalk({
+    clientID: '2df14abd3e23827edf70',
+    clientSecret: 'd78ff2c0068a5e15b8c574beac78cde6d03378f1',
+    repo: 'guopeng1998.github.io',
+    owner: 'guopeng1998',
+    admin: ['guopeng1998'],
+    id: 'Fri Feb 28 2020 20:58:40 GMT+0800',
+    distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
     
+
+  
+
+
 
 
           </div>
@@ -268,8 +500,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

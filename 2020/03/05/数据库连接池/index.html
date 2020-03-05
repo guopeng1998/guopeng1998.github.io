@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>数据库连接池 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="数据库连接池概述*概念：其实就是一个容器(集合)，存放数据库连接的容器        当系统初始化好后，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问玩之后，会将连接对象归还给容器。 *好处：     1.节约资源     2.用户访问高效数据库连接池的实现1，标准接口：DataSource     javax.sql包下的     1.方法：         *获">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库连接池">
+<meta property="og:url" content="http://yoursite.com/2020/03/05/数据库连接池/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="数据库连接池概述*概念：其实就是一个容器(集合)，存放数据库连接的容器        当系统初始化好后，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问玩之后，会将连接对象归还给容器。 *好处：     1.节约资源     2.用户访问高效数据库连接池的实现1，标准接口：DataSource     javax.sql包下的     1.方法：         *获">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-05T13:08:40.066Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="个人技术博客">
+<meta name="twitter:title" content="数据库连接池">
+<meta name="twitter:description" content="数据库连接池概述*概念：其实就是一个容器(集合)，存放数据库连接的容器        当系统初始化好后，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问玩之后，会将连接对象归还给容器。 *好处：     1.节约资源     2.用户访问高效数据库连接池的实现1，标准接口：DataSource     javax.sql包下的     1.方法：         *获">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -162,20 +163,24 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-数据库连接池" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-数据库连接池" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/05/数据库连接池/">数据库连接池</a>
+    <h1 class="article-title" itemprop="name">
+      数据库连接池
     </h1>
   
 
         
         
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
 <a href="/2020/03/05/数据库连接池/" class="archive-article-date">
   	<time datetime="2020-03-05T12:16:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
 </a>
@@ -228,6 +233,37 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝肥宅快乐水<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifupay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixinpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -235,16 +271,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/05/数据库连接池/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://guopeng1998.github.io/2020/03/05/数据库连接池/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/03/JDBC连接数据库/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JDBC连接数据库</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -259,424 +354,57 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-
-
-  
-    <article id="post-JDBC连接数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/03/JDBC连接数据库/">JDBC连接数据库</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/03/03/JDBC连接数据库/" class="archive-article-date">
-  	<time datetime="2020-03-03T12:36:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="JDBC的概念和本质"><a href="#JDBC的概念和本质" class="headerlink" title="JDBC的概念和本质"></a>JDBC的概念和本质</h3>
-        
-          <a class="article-more-a" href="/2020/03/03/JDBC连接数据库/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/03/JDBC连接数据库/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库连接池概述"><span class="toc-number">1.</span> <span class="toc-text">数据库连接池概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库连接池的实现"><span class="toc-number">2.</span> <span class="toc-text">数据库连接池的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C3P0数据库连接池技术"><span class="toc-number">3.</span> <span class="toc-text">C3P0数据库连接池技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Druid数据库连接池技术"><span class="toc-number">4.</span> <span class="toc-text">Druid数据库连接池技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-JDBC连接池技术"><span class="toc-number">5.</span> <span class="toc-text">Spring JDBC连接池技术</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-
+  
+  
+  
 
   
-    <article id="post-MySQL知识点总结三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+
+  
+
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+  var gitalk = new Gitalk({
+    clientID: '2df14abd3e23827edf70',
+    clientSecret: 'd78ff2c0068a5e15b8c574beac78cde6d03378f1',
+    repo: 'guopeng1998.github.io',
+    owner: 'guopeng1998',
+    admin: ['guopeng1998'],
+    id: 'Thu Mar 05 2020 20:16:19 GMT+0800',
+    distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/01/MySQL知识点总结三/">MySQL知识点总结三</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/03/01/MySQL知识点总结三/" class="archive-article-date">
-  	<time datetime="2020-03-01T12:49:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="多表查询的分类"><a href="#多表查询的分类" class="headerlink" title="多表查询的分类"></a>多表查询的分类</h3>
-        
-          <a class="article-more-a" href="/2020/03/01/MySQL知识点总结三/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/01/MySQL知识点总结三/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
 
   
-    <article id="post-MySQL知识点总结二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/28/MySQL知识点总结二/">MySQL知识点总结二</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/28/MySQL知识点总结二/" class="archive-article-date">
-  	<time datetime="2020-02-28T12:58:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="DQL操作表的排序查询"><a href="#DQL操作表的排序查询" class="headerlink" title="DQL操作表的排序查询"></a>DQL操作表的排序查询</h3>
-        
-          <a class="article-more-a" href="/2020/02/28/MySQL知识点总结二/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/28/MySQL知识点总结二/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
-
-
-
-
-  
-    <article id="post-MySQL知识点总结-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/27/MySQL知识点总结-一/">MySQL知识点总结(一)</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/27/MySQL知识点总结-一/" class="archive-article-date">
-  	<time datetime="2020-02-27T13:24:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h3>
-        
-          <a class="article-more-a" href="/2020/02/27/MySQL知识点总结-一/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/27/MySQL知识点总结-一/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
-    <article id="post-单例设计模式详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/16/单例设计模式详解/">单例设计模式详解</a>
-    </h1>
-  
-
-        
-        
-<a href="/2019/09/16/单例设计模式详解/" class="archive-article-date">
-  	<time datetime="2019-09-16T13:44:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="单例设计模式详解"><a href="#单例设计模式详解" class="headerlink" title="单例设计模式详解"></a>单例设计模式详解</h1>
-        
-          <a class="article-more-a" href="/2019/09/16/单例设计模式详解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/16/单例设计模式详解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
-    <article id="post-HashTable和HashMap的区别详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/16/HashTable和HashMap的区别详解/">HashTable和HashMap的区别详解</a>
-    </h1>
-  
-
-        
-        
-<a href="/2019/09/16/HashTable和HashMap的区别详解/" class="archive-article-date">
-  	<time datetime="2019-09-16T09:00:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="HashMap和HashTable的区别详解"><a href="#HashMap和HashTable的区别详解" class="headerlink" title="HashMap和HashTable的区别详解"></a>HashMap和HashTable的区别详解</h1>
-        
-          <a class="article-more-a" href="/2019/09/16/HashTable和HashMap的区别详解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/16/HashTable和HashMap的区别详解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -711,8 +439,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

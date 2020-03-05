@@ -184,47 +184,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="数据库连接池概述"><a href="#数据库连接池概述" class="headerlink" title="数据库连接池概述"></a>数据库连接池概述</h3><pre><code>*概念：其实就是一个容器(集合)，存放数据库连接的容器
-       当系统初始化好后，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问玩之后，会将连接对象归还给容器。
-*好处：
-    1.节约资源
-    2.用户访问高效</code></pre><h3 id="数据库连接池的实现"><a href="#数据库连接池的实现" class="headerlink" title="数据库连接池的实现"></a>数据库连接池的实现</h3><pre><code>1，标准接口：DataSource     javax.sql包下的
-    1.方法：
-        *获取连接：getConnection()
-        *归还连接：Connection.close()   如果连接对象Connection是从连接池中获取的，那么调用Connection.close()方法，则不会关闭连接了，而是归还连接
-2.一般我们不去实现它，有数据库厂商来实现
-    1.C3P0：数据库连接池技术
-    2.Druid：数据库数据库连接池实现技术，有阿里巴巴提供的</code></pre><h3 id="C3P0数据库连接池技术"><a href="#C3P0数据库连接池技术" class="headerlink" title="C3P0数据库连接池技术"></a>C3P0数据库连接池技术</h3><pre><code>*步骤：
-    1.导入jar包(两个)
-        *不要忘记导入数据库驱动jar包
-    2.定义配置文件
-        *名称：C3P0。properties 或者c3p0-config.xml
-        *路径：直接将文件放在src目录下即可。
-    3.创建核心对象  数据库连接池对象    ComboPooledDataSource
-    4.获取连接 getConnection()</code></pre><h3 id="Druid数据库连接池技术"><a href="#Druid数据库连接池技术" class="headerlink" title="Druid数据库连接池技术"></a>Druid数据库连接池技术</h3><pre><code>1.步骤：
-    1.导入jar包
-    2.定义配置文件
-        *是properties形式的
-        *可以叫任意名称，可以放在任意目录下
-    3.加载配置文件 Properties
-    4.获取数据库连接池对象：通过工厂模式来获取 DruidDataSourceFactory
-    5.获取连接：getConnection()</code></pre><h3 id="Spring-JDBC连接池技术"><a href="#Spring-JDBC连接池技术" class="headerlink" title="Spring JDBC连接池技术"></a>Spring JDBC连接池技术</h3><pre><code>*Spring框架对JDBC的简单封装，提供了一个JDBCTemplated对象简化JDBC的开发
-*步骤：
-    1.导入jar包
-    2.创建JdbcTemplate对象，依赖于数据源DataSource
-        *JdbcTemplate template = new JdbcTemplate();
-    3.调用JdbcTemplate的方法来完成CRUD的操作
-        *update()：执行DML语句  增、删、改语句
-        *queryForMap()：查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合
-            *注意：这个方法查询的结果集长度只能是1
-        *queryForList()：查询结果将结果集封装为List集合
-            *注意：将每一条记录封装为一个map集合，再将map集合装载到List集合中
-        *query()：查询结果，将结果集封装为JavaBean对象
-            *query的参数：RowMapper
-                *一般我们使用BeanPropertyRowMapper实现类，可以完成数据到JavaBean的自动封装
-                *new BeanPropertyRowMapper&lt;类型&gt;(类型.class)
-        *queryForObject:查询结果，将结果集封装为对象
-            *一般用于聚合函数的查询</code></pre>
+        <h3 id="数据库连接池概述"><a href="#数据库连接池概述" class="headerlink" title="数据库连接池概述"></a>数据库连接池概述</h3>
+        
+          <a class="article-more-a" href="/2020/03/05/数据库连接池/#more">more >></a>
+        
       
 
       

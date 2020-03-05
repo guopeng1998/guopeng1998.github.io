@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>数据库连接池 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据库连接池概述*概念：其实就是一个容器(集合)，存放数据库连接的容器        当系统初始化好后，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问玩之后，会将连接对象归还给容器。 *好处：     1.节约资源     2.用户访问高效数据库连接池的实现1，标准接口：DataSource     javax.sql包下的     1.方法：         *获">
+  <meta name="description" content="数据库连接池概述">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库连接池">
 <meta property="og:url" content="http://yoursite.com/2020/03/05/数据库连接池/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数据库连接池概述*概念：其实就是一个容器(集合)，存放数据库连接的容器        当系统初始化好后，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问玩之后，会将连接对象归还给容器。 *好处：     1.节约资源     2.用户访问高效数据库连接池的实现1，标准接口：DataSource     javax.sql包下的     1.方法：         *获">
+<meta property="og:description" content="数据库连接池概述">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-05T13:08:40.066Z">
+<meta property="og:updated_time" content="2020-03-05T13:22:09.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库连接池">
-<meta name="twitter:description" content="数据库连接池概述*概念：其实就是一个容器(集合)，存放数据库连接的容器        当系统初始化好后，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问玩之后，会将连接对象归还给容器。 *好处：     1.节约资源     2.用户访问高效数据库连接池的实现1，标准接口：DataSource     javax.sql包下的     1.方法：         *获">
+<meta name="twitter:description" content="数据库连接池概述">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -189,7 +189,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="数据库连接池概述"><a href="#数据库连接池概述" class="headerlink" title="数据库连接池概述"></a>数据库连接池概述</h3><pre><code>*概念：其实就是一个容器(集合)，存放数据库连接的容器
+        <h3 id="数据库连接池概述"><a href="#数据库连接池概述" class="headerlink" title="数据库连接池概述"></a>数据库连接池概述</h3><a id="more"></a>
+<pre><code>*概念：其实就是一个容器(集合)，存放数据库连接的容器
        当系统初始化好后，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问玩之后，会将连接对象归还给容器。
 *好处：
     1.节约资源
